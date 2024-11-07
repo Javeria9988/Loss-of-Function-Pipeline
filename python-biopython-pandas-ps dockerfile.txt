@@ -1,0 +1,16 @@
+# Use the official Python image as a base image
+FROM python:3.8-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Install Biopython, Pandas, and procps (for ps command)
+RUN apt-get update && \
+    apt-get install -y procps && \
+    pip install biopython pandas && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Run a command by default (can be overridden)
+CMD ["python", "--version"]
+

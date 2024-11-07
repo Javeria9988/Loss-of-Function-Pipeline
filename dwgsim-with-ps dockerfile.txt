@@ -1,0 +1,18 @@
+# Use a base image with the necessary tools. Ubuntu is a good starting point.
+FROM ubuntu:20.04
+
+# Install necessary packages: dwgsim, procps (for ps command), and other dependencies
+RUN apt-get update && \
+    apt-get install -y \
+    dwgsim \
+    procps \
+    && apt-get clean
+
+# Set up environment (if needed)
+ENV PATH="/usr/local/bin:$PATH"
+
+# Add any other setup or environment configuration here if necessary
+
+# Default command to run when starting a container
+CMD ["bash"]
+
