@@ -6,7 +6,7 @@ This pipeline performs a comprehensive pangenome analysis, starting from genome 
 ## Pipeline Structure
 The pipeline consists of the following steps:
 
-1. **Annotate:** Annotates the input sequences using prokka.
+1. **Annotate:** Annotates the input sequences using BAKTA.
 2. **Panaroo:** Identifies core and accessory genes across the annotated genomes and generates relevant outputs.
 3. **DWGSIM:** Generates error-free fastq reads from the input sequences.
 4. **Snippy:** Aligns sequences and calls SNPs based on the simulated reads.
@@ -15,7 +15,7 @@ The pipeline consists of the following steps:
 7. **Synonymous_mutations_detection:** Identifies synonymous mutations from the SNP data using python code.
 
 ## Workflow
-![pipeline workflow](https://github.com/user-attachments/assets/c90219e4-08b9-47f9-a669-3545f0b2483b)
+![Pipeline workflow](https://github.com/user-attachments/assets/4092bbdf-4c1d-4fd8-a8e0-6ec7b7430fe7)
 
 ## Installation
 
@@ -56,8 +56,8 @@ This pipeline utilizes Docker containers to ensure reproducibility and consisten
 ### Containers Used:
 
 1. **Annotate:**
-   - **Container:** `staphb/prokka:latest`
-   - **Description:** This container includes Prokka, a tool used for rapid annotation of prokaryotic genomes.
+   - **Container:** `staphb/bakta:1.9.4-5.1-light`
+   - **Description:** This container includes BAKTA, a tool used for rapid annotation of prokaryotic genomes.
 
 2. **Panaroo:**
    - **Container:** `staphb/panaroo:latest`
